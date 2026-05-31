@@ -1,0 +1,6 @@
+[database]
+pool = 8
+password = "prod-secret"
+
+[features]
+checkout_v2 = false

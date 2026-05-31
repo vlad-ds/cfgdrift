@@ -1,0 +1,6 @@
+[database]
+pool = 16
+password = "staging-secret"
+
+[features]
+checkout_v2 = true

@@ -1,0 +1,2 @@
+# Example ignore file. Pass with --ignore-file .cfgdriftignore when needed.
+metadata.generated_at
