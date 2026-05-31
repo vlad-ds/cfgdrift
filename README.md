@@ -1,5 +1,7 @@
 # cfgdrift
 
+[![CI](https://github.com/vlad-ds/cfgdrift/actions/workflows/ci.yml/badge.svg)](https://github.com/vlad-ds/cfgdrift/actions/workflows/ci.yml)
+
 `cfgdrift` is a fast Rust CLI for finding semantic drift between config files or config directories. It understands JSON, YAML, TOML, and `.env`, redacts secret-looking values by default, and emits human, JSON, or Markdown output for local review and CI.
 
 Plain `diff` is noisy for config review because it sees formatting, key order, and quote changes. Format-specific tools help, but teams usually keep mixed config trees. `cfgdrift` compares the parsed settings and reports the field paths that actually changed.
