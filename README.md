@@ -64,14 +64,9 @@ cfgdrift diff config/prod config/staging --format json --exit-zero
 
 ## Why This Exists
 
-Before building this, the candidate ideas were:
+Config drift is easy to miss and hard to review cleanly. Production, staging, CI, and local config often live in different files and formats, while normal text diffs mix real setting changes with formatting, ordering, and quoting noise.
 
-| Idea | Why it is useful | Why this was not the first pick |
-| --- | --- | --- |
-| Cross-ecosystem `why` for lockfiles | Explains why a transitive dependency is installed across Cargo, npm, pnpm, and Python | Useful, but deep package-manager semantics make a focused first release harder |
-| Repo support bundle generator | Produces redacted, reproducible bug-report bundles | Useful, but crowded by broader diagnostics and AI-context tools |
-| Port/process cleanup CLI | Finds and frees stuck dev ports | Helpful, but mostly a nicer wrapper over existing OS commands |
-| Config drift detector | Catches unsafe environment drift in mixed config trees | Strong fit for a fast Rust CLI, clear CI value, and practical gap between plain diff and format-specific tools |
+`cfgdrift` focuses on the parsed configuration values and reports stable field-level changes that are useful in terminals, pull requests, and automation.
 
 ## Supported Inputs
 
